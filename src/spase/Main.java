@@ -28,7 +28,7 @@ public class Main extends Canvas implements Runnable, KeyListener {
 		setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
 		
 		new SpriteSheet();
-		player = new Player(20,20);
+		player = new Player(20, 20);
 	}
 	
 	public static void main(String[] args) {
@@ -59,14 +59,13 @@ public class Main extends Canvas implements Runnable, KeyListener {
 		g.setColor(Color.black);
 		g.fillRect(0, 0, WIDTH*SCALE, HEIGHT*SCALE);	
 		
-		player.render(g);
-		
 		g.setFont(new Font("arial", Font.BOLD, 10));
 		g.setColor(Color.white);
 		g.drawString("VIDA: " + Player.vida, 5, 10);
 		g.drawString("SCORE: " + Player.pontuacao, 60, 10);
 		g.drawString("BEST: " + Player.best, 5, 20);
-		
+
+		player.render(g);
 		/***/
 		g = bs.getDrawGraphics();
 		g.drawImage(layer, 0, 0, WIDTH*SCALE, HEIGHT*SCALE, null);
@@ -78,6 +77,7 @@ public class Main extends Canvas implements Runnable, KeyListener {
 		long lastTime = System.nanoTime();
 		double ns = 1000000000 / 60.0;
 		double delta = 0;
+		setFocusable(true);
 		while(isRunning) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
@@ -92,10 +92,7 @@ public class Main extends Canvas implements Runnable, KeyListener {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void keyTyped(KeyEvent e) {}
 
 	@Override
 	public void keyPressed(KeyEvent e) {

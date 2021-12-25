@@ -12,7 +12,7 @@ public class Player {
 	public boolean up, down, left, right;
 	public static int width, height;
 	public static int pontuacao = 0;
-	public static int best; /*melhor pontuação*/
+	public static int best; /*melhor pontuaï¿½ï¿½o*/
 	
 	public int framed = 0;
 	
@@ -53,7 +53,7 @@ public class Player {
 		
 		//if(shoot) {	
 		contador++;
-		if(contador == 20) {
+		if(contador == 15) {
 			contador = 0;
 			bullets.add(new Bullet());
 				
@@ -83,7 +83,7 @@ public class Player {
 			return;
 		}
 		
-		// ANIMAÇÃO //
+		// ANIMAï¿½ï¿½O //
 		frames++;
 		if(frames >= maxFrames) {
 			frames = 0;
